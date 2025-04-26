@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { wishItem } from '../shared/models/wishItem';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common'; //for ngFor and stuff
+import { FormsModule } from '@angular/forms'; // for ngModel
 import { WishListComponent } from "./wish-list/wish-list.component";
+import { AddWishFormComponent } from './add-wish-form/add-wish-form.component';
 
 // an array of arrow functions
 const filters = [
@@ -15,7 +16,7 @@ const filters = [
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, FormsModule, WishListComponent],
+  imports: [CommonModule, RouterOutlet, FormsModule, WishListComponent, AddWishFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -27,7 +28,7 @@ export class AppComponent {
     new wishItem('To find grass that cuts itself', false)
   ];
 
-  newWishText = '';
+
 
   listFilter: any = '0';
 
@@ -38,10 +39,7 @@ export class AppComponent {
 
   title = 'wishlist';
 
-  addNewWish(){
-    this.items.push(new wishItem(this.newWishText));
-    this.newWishText = '';
-  }
+ 
 
   
 
