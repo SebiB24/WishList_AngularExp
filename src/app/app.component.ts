@@ -14,12 +14,14 @@ import { FormsModule } from '@angular/forms';
 export class AppComponent {
 
   items: wishItem[] = [
-    // new wishItem('To learn Angular'),
-    // new wishItem('Get coffee', true),
-    // new wishItem('To find grass that cuts itself', false)
+    new wishItem('To learn Angular'),
+    new wishItem('Get coffee', true),
+    new wishItem('To find grass that cuts itself', false)
   ];
 
   newWishText = '';
+
+  listFilter: String = '0';
 
   title = 'wishlist';
 
@@ -31,5 +33,21 @@ export class AppComponent {
   toggleItem(item: wishItem){
     item.isComplete = !item.isComplete;
     console.log(item);
+  }
+
+  getFilterItems(){
+    let filterItems: wishItem[] = [];
+    for(let item of this.items){
+      if(this.listFilter == '0'){
+        filterItems.push(item);
+      }
+      if(this.listFilter == '1' && !item.isComplete){
+        filterItems.push(item);
+      }
+      if(this.listFilter == '2' && item.isComplete){
+        filterItems.push(item);
+      }
+    }
+    return filterItems;
   }
 }
