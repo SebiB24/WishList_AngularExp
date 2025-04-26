@@ -4,6 +4,13 @@ import { wishItem } from '../shared/models/wishItem';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+// an array of arrow functions
+const filters = [
+  (item : wishItem) => item,
+  (item : wishItem) => !item.isComplete,
+  (item : wishItem) => item.isComplete
+];
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -21,7 +28,12 @@ export class AppComponent {
 
   newWishText = '';
 
-  listFilter: String = '0';
+  listFilter: any = '0';
+
+  get visibleItems(): wishItem[]{
+    // we pick the correct arrow function for the filter from the filters array(line 8)
+    return this.items.filter(filters[this.listFilter]);
+  };
 
   title = 'wishlist';
 
@@ -35,19 +47,4 @@ export class AppComponent {
     console.log(item);
   }
 
-  getFilterItems(){
-    let filterItems: wishItem[] = [];
-    for(let item of this.items){
-      if(this.listFilter == '0'){
-        filterItems.push(item);
-      }
-      if(this.listFilter == '1' && !item.isComplete){
-        filterItems.push(item);
-      }
-      if(this.listFilter == '2' && item.isComplete){
-        filterItems.push(item);
-      }
-    }
-    return filterItems;
-  }
 }
