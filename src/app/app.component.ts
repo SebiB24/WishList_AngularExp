@@ -5,18 +5,16 @@ import { CommonModule } from '@angular/common'; //for ngFor and stuff
 import { FormsModule } from '@angular/forms'; // for ngModel
 import { WishListComponent } from "./wish-list/wish-list.component";
 import { AddWishFormComponent } from './add-wish-form/add-wish-form.component';
+import { WishFilterComponent } from "./wish-filter/wish-filter.component";
+import { ArrowFunctionExpr } from '@angular/compiler';
 
 // an array of arrow functions
-const filters = [
-  (item : wishItem) => item,
-  (item : wishItem) => !item.isComplete,
-  (item : wishItem) => item.isComplete
-];
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, FormsModule, WishListComponent, AddWishFormComponent],
+  imports: [CommonModule, RouterOutlet, FormsModule, WishListComponent, AddWishFormComponent, WishFilterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -27,20 +25,7 @@ export class AppComponent {
     new wishItem('Get coffee', true),
     new wishItem('To find grass that cuts itself', false)
   ];
-
-
-
-  listFilter: any = '0';
-
-  get visibleItems(): wishItem[]{
-    // we pick the correct arrow function for the filter from the filters array(line 8)
-    return this.items.filter(filters[this.listFilter]);
-  };
-
-  title = 'wishlist';
-
- 
-
   
+  filter: any = () => {};
 
 }
