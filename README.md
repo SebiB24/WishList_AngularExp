@@ -3,7 +3,8 @@
 This is a simple **Wishlist** application built using **Angular 16+** and **Bootstrap 5**.  
 It lets you add, check off, and filter wishes right in your browser!
 
-![Wishlist Screenshot](./wishlist-screenshot.png) <!-- (Optional: Replace with real screenshot) -->
+![image](https://github.com/user-attachments/assets/acdb41eb-4c33-465a-ba66-8e58173a498c)
+ <!-- (Optional: Replace with real screenshot) -->
 
 ## 🚀 Live Demo
 Simply run the project locally and access it through your browser.
@@ -73,30 +74,12 @@ Simply run the project locally and access it through your browser.
 - **Bootstrap 5**
 - **Vite** (for super fast builds and hot reloads)
 
-## 📦 Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/wishlist-angular.git
-   cd wishlist-angular
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-3. **Run the app**:
-   ```bash
-   npm run dev
-   ```
-   Then open your browser at: `http://localhost:4200/`
-
 ## 📸 Screenshots
 > *(Add screenshots of your app in action!)*  
 Example:
-
-![Wishlist Example](./wishlist-example.png)
+![image](https://github.com/user-attachments/assets/3ab14051-264f-444a-a419-0988d9a63b12)
+![image](https://github.com/user-attachments/assets/4d29fe2c-88ee-49b5-84c5-753352062b7a)
+![image](https://github.com/user-attachments/assets/7a0dd1c2-6209-427e-9535-07f73b73814a)
 
 ## 🚧 Future Improvements
 - Add persistent storage (localStorage or a backend)
@@ -104,10 +87,3 @@ Example:
 - Sort wishes by date added or completed status
 - Improve mobile responsiveness even more
 
-## 🧹 License
-This project is for learning and practicing Angular.  
-Feel free to fork, modify, and share!
-
----
-
-> Made with ❤️ using Angular and Bootstrap.
