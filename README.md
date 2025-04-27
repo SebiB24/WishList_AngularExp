@@ -75,8 +75,7 @@ Simply run the project locally and access it through your browser.
 - **Vite** (for super fast builds and hot reloads)
 
 ## 📸 Screenshots
-> *(Add screenshots of your app in action!)*  
-Example:
+
 ![image](https://github.com/user-attachments/assets/3ab14051-264f-444a-a419-0988d9a63b12)
 ![image](https://github.com/user-attachments/assets/4d29fe2c-88ee-49b5-84c5-753352062b7a)
 ![image](https://github.com/user-attachments/assets/7a0dd1c2-6209-427e-9535-07f73b73814a)
