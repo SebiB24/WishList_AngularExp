@@ -1,59 +1,88 @@
-# Wishlist
+# 🎯 Wishlist App - Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
+This is a simple **Wishlist** application built using **Angular 16+** and **Bootstrap 5**.  
+It lets you add, check off, and filter wishes right in your browser!
 
-## Development server
+![image](https://github.com/user-attachments/assets/acdb41eb-4c33-465a-ba66-8e58173a498c)
+ <!-- (Optional: Replace with real screenshot) -->
 
-To start a local development server, run:
+## 🚀 Live Demo
+Simply run the project locally and access it through your browser.
 
-```bash
-ng serve
+## 📂 Project Structure
+```
+/wishlist
+├── src
+│   ├── app
+│   │   ├── add-wish-form
+│   │   ├── wish-filter
+│   │   ├── wish-list
+│   │   ├── shared/models/wishItem.ts
+│   │   ├── app.component.ts / html / css
+│   │   ├── app.routes.ts
+│   │   └── app.config.ts
+│   ├── index.html
+│   ├── main.ts
+│   ├── styles.css
+├── angular.json
+├── package.json
+├── tsconfig.json
+└── README.md
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🎮 Features
+- ✅ Add new wishes
+- ✅ Mark wishes as fulfilled or unfulfilled
+- ✅ Filter wishes (All, Fulfilled, Unfulfilled)
+- ✅ Responsive Bootstrap design
+- ✅ Full use of Angular Standalone Components
+- ✅ Organized and reusable components
 
-## Code scaffolding
+## 📋 How It Works
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Components:
+- **AddWishFormComponent**:  
+  - Handles adding new wishes.
+  - Uses two-way binding with `ngModel`.
+- **WishListComponent**:  
+  - Displays the list of wishes.
+  - Handles toggling wish fulfillment status.
+- **WishFilterComponent**:  
+  - Filters wishes by "All", "Fulfilled", and "Unfulfilled" using a dropdown.
+- **AppComponent**:  
+  - Central place to manage wish items and current filter.
 
-```bash
-ng generate component component-name
-```
+### Models:
+- **wishItem**:
+  ```ts
+  export class wishItem {
+    constructor(
+      public wishText: string,
+      public isComplete: boolean = false
+    ) {}
+  }
+  ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Main Logic:
+- New wishes are added to an array of `wishItem` objects.
+- Items are filtered by a selected condition (`All`, `Fulfilled`, `Unfulfilled`).
+- Changes immediately reflect on the page without reloads.
 
-```bash
-ng generate --help
-```
+## 🛠️ Built With
+- **Angular 16+ (with Standalone Components)**
+- **TypeScript**
+- **Bootstrap 5**
+- **Vite** (for super fast builds and hot reloads)
 
-## Building
+## 📸 Screenshots
 
-To build the project run:
+![image](https://github.com/user-attachments/assets/3ab14051-264f-444a-a419-0988d9a63b12)
+![image](https://github.com/user-attachments/assets/4d29fe2c-88ee-49b5-84c5-753352062b7a)
+![image](https://github.com/user-attachments/assets/7a0dd1c2-6209-427e-9535-07f73b73814a)
 
-```bash
-ng build
-```
+## 🚧 Future Improvements
+- Add persistent storage (localStorage or a backend)
+- Add edit/delete functionality for wishes
+- Sort wishes by date added or completed status
+- Improve mobile responsiveness even more
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
