@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { wishItem } from '../../shared/models/wishItem';
 
@@ -15,14 +15,18 @@ const filters = [
   styleUrl: './wish-filter.component.css'
 })
 export class WishFilterComponent implements OnInit{
-  @Output() filter = new EventEmitter<any>();
+  @Input() filter: any;
+  // angular rule for 2 way binding output has the same name as input
+  //followed by Change (ex: filter and filterChange)!!! 
+  @Output() filterChange = new EventEmitter<any>(); 
   listFilter: any = '0';
 
   ngOnInit(): void {
-    this.filter.emit(filters[this.listFilter]);
+    this.updateFilter(this.listFilter);
   }
 
-  changeFilter(value: any){
-    this.filter.emit(filters[value]);
+  updateFilter(value: any){
+    this.filter = filters[value];
+    this.filterChange.emit(this.filter);
   }
 }
